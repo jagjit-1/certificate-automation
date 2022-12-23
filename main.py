@@ -56,9 +56,9 @@ for i in ws.rows:
     if name != 'Names' and name != None and len(name) > 0:
         name = name.upper()
         (width, height), baseline = cv2.getTextSize(
-            name, cv2.FONT_HERSHEY_COMPLEX, 4, 4)
-        cv2.putText(template, name, (1000 - width//2, 700),
-                    cv2.FONT_HERSHEY_SIMPLEX, 4, (0, 0, 0), 4, cv2.LINE_AA)
+            name, cv2.FONT_HERSHEY_COMPLEX, 1, 1)
+        cv2.putText(template, name, (350 - width//2, 690),
+                    cv2.FONT_HERSHEY_TRIPLEX, 1, (0, 0, 0), 1, cv2.LINE_AA)
         path = f"D:\github\python automation\certificate automation\generated\{name}.jpg"
         cv2.imwrite(path, template)
         send_emails(i[1].value, path, name)
